@@ -1,0 +1,215 @@
+ :root {
+            --bg-color: #98cb98; 
+            --ui-bg: #fdfdfd;
+            --accent-red: #e43342;
+            --accent-yellow: #f8ca12;
+            --text-color: #1d3557;
+            --pixel-border: 4px;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #222; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Press Start 2P', cursive;
+            image-rendering: pixelated;
+        }
+
+
+            .game-container {
+            width: 1050px;
+            height: 700px;
+            background-color: #5ba9c9;
+            border: 8px solid #111;
+            border-radius: 8px;
+            box-shadow: 0 0 0 4px  #555, 0 10px 20px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .header {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 15px;
+            border-bottom: 4px solid #a80020;
+            text-align: center;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+        }
+
+        .main-view {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle, transparent 20%, var(--bg-color) 20%, var(--bg-color) 80%, transparent 80%, transparent),
+                radial-gradient(circle, transparent 20%, var(--bg-color) 20%, var(--bg-color) 80%, transparent 80%, transparent);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            padding: 20px;
+        }
+
+ 
+        .input-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pixel-input {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            padding: 10px;
+            width: 200px;
+            background: #fff;
+            border: 4px solid var(--text-color);
+            color: var(--text-color);
+            outline: none;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .pixel-input::placeholder {
+            color: #aaa;
+        }
+
+        .tomato-sprite {
+            font-size: 80px;
+            margin-bottom: 15px;
+            filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+            animation: bounce 1s infinite alternate paused; 
+        }
+        
+        .running .tomato-sprite {
+            animation-play-state: running;
+        }
+
+        .timer-display {
+            background: #eee;
+            padding: 10px 20px;
+            border: 4px solid var(--text-color);
+            font-size: 24px;
+            color: var(--text-color);
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .status-text {
+            margin-top: 10px;
+            font-size: 10px;
+            color: var(--text-color);
+            height: 15px;
+        }
+        .menu-sidebar {
+            flex: 1;
+            background-color: var(--ui-bg);
+            border-left: 4px solid var(--text-color);
+            padding: 100px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+        }
+        #Time {
+            position: absolute;
+            top: 60px;
+            font-size: 25px;
+        }
+        #Subject{
+            position: absolute;
+            top: 95px;
+            font-size: 25px;
+
+        }
+        #Break{
+            position: absolute;
+            top: 135px;
+            font-size: 25px;
+
+        }
+        
+        .pixel-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            padding: 14px 7px;
+            background-color: var(--ui-bg);
+            color: var(--text-color);
+            border: 4px solid var(--text-color);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.1s;
+            text-align: center;
+            box-shadow: 4px 4px 0px var(--text-color);
+        }
+
+        #sessions-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #6e6e6e;
+}
+
+#sessions-container.show {
+    max-height: 700px; 
+}
+#sessions-list li {
+    margin-bottom: 12px;
+}
+
+#sessions-list li strong {
+    display: block;       
+    margin-bottom: 6px;  
+}
+
+        .pixel-btn:hover {
+            background-color: var(--accent-yellow);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--text-color);
+        }
+
+        .pixel-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+        
+        .pixel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 4px 4px 0px var(--text-color);
+        }
+
+        .btn-start { border-color: #2a9d8f; color: #2a9d8f; box-shadow: 4px 4px 0px #2a9d8f; }
+        .btn-start:hover { background-color: #2a9d8f; color: white; }
+
+        .btn-stop { border-color: var(--accent-red); color: var(--accent-red); box-shadow: 4px 4px 0px var(--accent-red); }
+        .btn-stop:hover { background-color: var(--accent-red); color: white; }
+
+        @keyframes bounce {
+            from { transform: translateY(-5px); }
+            to { transform: translateY(5px); }
+        }
+        
+        .game-container::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+        }
