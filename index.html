@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div class="game-container" id="app">
+        <div class="header">POMODORO</div>
+        <div class="content-wrapper">
+            <div class="main-view">
+                <div class="input-container">
+                    <input type="text" id="subject-input" class="pixel-input" placeholder="SUBJECT?">
+                </div>
+            
+                <div class="tomato-sprite">🍅</div>
+                <div class="timer-display" id="timer">00:00</div>
+                <div class="status-text" id="status-text">READY</div>
+            </div>
+
+            <div class="menu-sidebar">
+                <div id="sessions-container">
+    <h3 id="study">SESSIONS</h3>
+    <ul id="sessions-list"></ul>
+</div>
+                <button class="pixel-btn btn-start" id="btn-start" onclick="startTimer()">START</button>
+                <button class="pixel-btn btn-stop" id="btn-stop" onclick="stopTimer()">STOP</button>
+              <button class="pixel-btn" onclick="saveSession()">SAVE</button>
+              <button class="pixel-btn" onclick="renderSessions()" id="mystudy">SESSIONS</button>
+            </div>
+        </div>
+    </div>
+    <script src="str.js" defer></script>
+</body>
+</html>
