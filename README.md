@@ -1,67 +1,27 @@
-Study Timer API 🚀
-A simple FastAPI-powered study timer for tracking Pomodoro-style sessions. Start sessions, stop & save them, view history - perfect for students!
+# POMODORO QUEST TIME
+This is a simple pomodoro type timer to focus on studies just upload a subject you will be studying
+and click the start vutton to start this session
 
-✨ Live Demo
-Try it live!
-Interactive Swagger UI - test endpoints in browser!
+# Stack used
 
-📖 Features
-POST /start - Start a study session with subject
+## Backend
 
-POST /stop - End session & save to history
+=> python
+=> Fastapi
 
-GET /session - View all saved sessions
+## Frontend
 
-🚀 Quick Start (Local)
-bash
-# 1. Install dependencies
-pip install fastapi uvicorn pydantic
+=>HTML
+=>CSS
+=>Javascript
 
-# 2. Run server
-uvicorn main:app --reload
+# AI usage
+Since I am a beginner in both fast api and frontend I decieded to use only for te frontend
+For the backend I only used it to get the logic of the Fast api
 
-# 3. Open docs
-http://127.0.0.1:8000/docs
-🛠 API Endpoints
-Endpoint	Method	Description	Example
-/start	POST	Start timer	{"subject": "Math"}
-/stop	POST	Stop & save	-
-/session	GET	View history	-
-Example usage:
-
-bash
-# Start Math session
-curl -X POST "http://localhost:8000/start" -d '{"subject": "Math"}'
-
-# Stop session
-curl -X POST "http://localhost:8000/stop"
-
-# View history
-curl "http://localhost:8000/session"
-📁 File Structure
-text
-study-timer-api/
-├── main.py          # FastAPI app
-├── requirements.txt # Dependencies
-└── Procfile         # Railway deployment
-☁️ Deploy Anywhere
-Railway (used here): railway.app → GitHub repo → Live!
-
-Render: Free tier works great
-
-Heroku/Vercel: Add Procfile
-
-🛠 Tech Stack
-FastAPI - API framework + auto-docs
-
-Pydantic - Data validation
-
-JSON - Session persistence
-
-Railway - Production hosting
-
-📄 License
-MIT - Use freely for hackathons, projects, learning!
-
-Built by zincxhigh | #Flavourtown #HackClub 🎉
+# Future improvements
+* Adding other studies features like Flash cards
+* Adding a status bar to see How well you did in subjects
+* Creating a proper sessions viewer for better understanding of afast api
+* Adding my own tastes in designs
 
