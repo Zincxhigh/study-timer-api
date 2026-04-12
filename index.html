@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Quest</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="cat.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
 
@@ -16,11 +17,21 @@
         <div class="header">POMODORO</div>
         <div class="content-wrapper">
             <div class="main-view">
+                    <select id="fruit-select" class="pixel-input2">
+        <option value="🍅">🍅</option>
+        <option value="🍎">🍎</option>
+        <option value="🍓">🍓</option>
+        <option value="🍈">🍈</option>
+        <option value="🍌">🍌</option>
+        <option value="🍍">🍍</option>
+        <option value="🍑">🍑</option>
+        <option value="🍇">🍇</option>
+    </select>
                 <div class="input-container">
                     <input type="text" id="subject-input" class="pixel-input" placeholder="SUBJECT?">
                 </div>
             
-                <div class="tomato-sprite">🍅</div>
+                <div class="tomato-sprite" id="fruit-sprite">🍅</div>
                 <div class="timer-display" id="timer">00:00</div>
                 <div class="status-text" id="status-text">READY</div>
             </div>
@@ -37,6 +48,8 @@
             </div>
         </div>
     </div>
+
+
     <script src="str.js" defer></script>
 </body>
 </html>
