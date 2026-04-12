@@ -1,5 +1,5 @@
 const API_CONFIG = {
-    baseUrl: "https://study-timer-api-pd-0-production.up.railway.app",
+    baseUrl: "https://study-api-production-00b5.up.railway.app",
     startSessionUrl: "/start",
     stopSessionUrl: "/stop",
     getSessionsUrl: "/session"
@@ -15,6 +15,19 @@ let sessionsVisible = false;
 const button = document.getElementById("mystudy");
 const text = document.getElementById("study");
 
+window.addEventListener("DOMContentLoaded", () => {
+    const fruitSelect = document.getElementById("fruit-select");
+    const fruitSprite = document.getElementById("fruit-sprite");
+
+    if (!fruitSelect || !fruitSprite) {
+        console.log("Missing elements!");
+        return;
+    }
+
+    fruitSelect.addEventListener("change", () => {
+        fruitSprite.innerText = fruitSelect.value;
+    });
+});
 
 function formatTime(totalSeconds) {
     const mins = Math.floor(totalSeconds / 60);
@@ -162,3 +175,4 @@ button.addEventListener('click', async () => {
         sessionsVisible = false;
     }
 });
+
